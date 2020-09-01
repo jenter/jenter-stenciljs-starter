@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface FauxGrid {
+    }
+    interface FauxInner {
+    }
+    interface FauxMarkup {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +28,24 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLFauxGridElement extends Components.FauxGrid, HTMLStencilElement {
+    }
+    var HTMLFauxGridElement: {
+        prototype: HTMLFauxGridElement;
+        new (): HTMLFauxGridElement;
+    };
+    interface HTMLFauxInnerElement extends Components.FauxInner, HTMLStencilElement {
+    }
+    var HTMLFauxInnerElement: {
+        prototype: HTMLFauxInnerElement;
+        new (): HTMLFauxInnerElement;
+    };
+    interface HTMLFauxMarkupElement extends Components.FauxMarkup, HTMLStencilElement {
+    }
+    var HTMLFauxMarkupElement: {
+        prototype: HTMLFauxMarkupElement;
+        new (): HTMLFauxMarkupElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +53,19 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "faux-grid": HTMLFauxGridElement;
+        "faux-inner": HTMLFauxInnerElement;
+        "faux-markup": HTMLFauxMarkupElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface FauxGrid {
+    }
+    interface FauxInner {
+    }
+    interface FauxMarkup {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +81,9 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "faux-grid": FauxGrid;
+        "faux-inner": FauxInner;
+        "faux-markup": FauxMarkup;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +91,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "faux-grid": LocalJSX.FauxGrid & JSXBase.HTMLAttributes<HTMLFauxGridElement>;
+            "faux-inner": LocalJSX.FauxInner & JSXBase.HTMLAttributes<HTMLFauxInnerElement>;
+            "faux-markup": LocalJSX.FauxMarkup & JSXBase.HTMLAttributes<HTMLFauxMarkupElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

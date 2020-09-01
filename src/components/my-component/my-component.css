@@ -1,3 +1,7 @@
 :host {
   display: block;
 }
+.test-component {
+  padding: 10px;
+  border: 1px dotted lightblue;
+}

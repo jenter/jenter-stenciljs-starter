@@ -1,0 +1,8 @@
+:host {
+  display: block;
+}
+
+:host(*) {
+  background: lightyellow;
+  padding: 10px;
+}

@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+.faux-grid {
+  margin: 10px 0;
+  border: 2px dotted orange;
+  padding: 5px;
+}
+
+::slotted(div) {
+   border: 1px dotted green;
+  padding: 10px;
+  margin: 10px;
+}
+
+
