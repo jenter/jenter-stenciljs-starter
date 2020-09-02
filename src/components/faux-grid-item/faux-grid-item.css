@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.delayed--wrapper {
+  border: 1px dashed lightsteelblue;
+  padding: 5px;
+  border-radius: 3px;
+  margin: 5px;
+}

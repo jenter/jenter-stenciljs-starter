@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface FauxGrid {
     }
+    interface FauxGridItem {
+    }
     interface FauxInner {
     }
     interface FauxMarkup {
@@ -34,6 +36,12 @@ declare global {
         prototype: HTMLFauxGridElement;
         new (): HTMLFauxGridElement;
     };
+    interface HTMLFauxGridItemElement extends Components.FauxGridItem, HTMLStencilElement {
+    }
+    var HTMLFauxGridItemElement: {
+        prototype: HTMLFauxGridItemElement;
+        new (): HTMLFauxGridItemElement;
+    };
     interface HTMLFauxInnerElement extends Components.FauxInner, HTMLStencilElement {
     }
     var HTMLFauxInnerElement: {
@@ -54,6 +62,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "faux-grid": HTMLFauxGridElement;
+        "faux-grid-item": HTMLFauxGridItemElement;
         "faux-inner": HTMLFauxInnerElement;
         "faux-markup": HTMLFauxMarkupElement;
         "my-component": HTMLMyComponentElement;
@@ -61,6 +70,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface FauxGrid {
+    }
+    interface FauxGridItem {
     }
     interface FauxInner {
     }
@@ -82,6 +93,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "faux-grid": FauxGrid;
+        "faux-grid-item": FauxGridItem;
         "faux-inner": FauxInner;
         "faux-markup": FauxMarkup;
         "my-component": MyComponent;
@@ -92,6 +104,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "faux-grid": LocalJSX.FauxGrid & JSXBase.HTMLAttributes<HTMLFauxGridElement>;
+            "faux-grid-item": LocalJSX.FauxGridItem & JSXBase.HTMLAttributes<HTMLFauxGridItemElement>;
             "faux-inner": LocalJSX.FauxInner & JSXBase.HTMLAttributes<HTMLFauxInnerElement>;
             "faux-markup": LocalJSX.FauxMarkup & JSXBase.HTMLAttributes<HTMLFauxMarkupElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
