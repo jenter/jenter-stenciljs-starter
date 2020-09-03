@@ -3,7 +3,7 @@ import { Component, State, h } from '@stencil/core';
 @Component({
   tag: 'faux-grid-item',
   styleUrl: 'faux-grid-item.css',
-  // shadow: true, //  <<=== causing issue when not ON
+  shadow: false, // <<=== causes issues
 })
 
 export class FauxGridItem {
@@ -28,7 +28,7 @@ export class FauxGridItem {
       };
       console.log('.: activate new wrapper :.');
       this.setToActive();
-    }, 1000);
+    }, 5000);
   }
 
   disconnectedCallback() {

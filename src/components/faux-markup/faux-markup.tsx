@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'faux-markup',
@@ -9,9 +9,14 @@ export class FauxMarkup {
 
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <div>
+        <a>A tag</a>
+        <p>P tag</p>
+        <h1>H1 tag</h1>
+        <div>DIV tag</div>
+        <img src="https://via.placeholder.com/150" />
+        <slot />
+      </div>
     );
   }
 
