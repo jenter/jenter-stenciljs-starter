@@ -3,7 +3,7 @@ import { Component, State, h } from '@stencil/core';
 @Component({
   tag: 'faux-grid-item',
   styleUrl: 'faux-grid-item.css',
-  // shadow: true, <<=== causing issue
+  // shadow: true, //  <<=== causing issue when not ON
 })
 
 export class FauxGridItem {
