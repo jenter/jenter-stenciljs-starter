@@ -1,9 +1,9 @@
-import { Component, Host, State, h } from '@stencil/core';
+import { Component, State, h } from '@stencil/core';
 
 @Component({
   tag: 'faux-grid-item',
   styleUrl: 'faux-grid-item.css',
-  shadow: true,
+  // shadow: true, <<=== causing issue
 })
 
 export class FauxGridItem {
@@ -28,23 +28,20 @@ export class FauxGridItem {
       };
       console.log('.: activate new wrapper :.');
       this.setToActive();
-    }, 5000);
+    }, 1000);
   }
 
   disconnectedCallback() {
     this.clearTheInterval();
   }
+
   render() {
     if (this.isactive) {
       return (
-        <Host>
-          <div class="delayed--wrapper">
-            <slot></slot>
-          </div>
-        </Host>
+        <div class="delayed--wrapper">
+          <slot />
+        </div>
       );
-    } else {
-      return <Host><slot></slot></Host>;
     }
   }
 }
