@@ -3,13 +3,16 @@
 }
 
 .faux-grid {
-  margin: 10px 0;
-  border: 2px dotted orange;
-  padding: 5px;
+    margin: 0;
+    border: 1px solid orange;
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
 }
 
 ::slotted(div) {
-   border: 1px dotted green;
+  border: 1px solid green;
   padding: 10px;
   margin: 10px;
 }

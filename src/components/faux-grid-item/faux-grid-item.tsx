@@ -28,7 +28,7 @@ export class FauxGridItem {
       };
       console.log('.: activate new wrapper :.');
       this.setToActive();
-    }, 5000);
+    }, 2000);
   }
 
   disconnectedCallback() {
