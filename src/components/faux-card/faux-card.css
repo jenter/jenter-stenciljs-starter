@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+
+.faux-card__wrapper {
+  display: flex;
+}
+
+.faux-card {
+    margin: 20px;
+    border: 1px dashed rgb(180, 228, 180);
+    display: block;
+}
+
+.faux-card:hover {
+   background:rgb(180, 228, 180, .3);
+}
+
+::slotted(div) {
+  border: 1px dashed lightgrey;
+  padding: 10px;
+  margin: 10px;
+  background: white;
+  min-height: 50px;
+}

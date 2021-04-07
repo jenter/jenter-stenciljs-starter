@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface FauxCard {
+    }
     interface FauxGrid {
     }
     interface FauxGridItem {
@@ -30,6 +32,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLFauxCardElement extends Components.FauxCard, HTMLStencilElement {
+    }
+    var HTMLFauxCardElement: {
+        prototype: HTMLFauxCardElement;
+        new (): HTMLFauxCardElement;
+    };
     interface HTMLFauxGridElement extends Components.FauxGrid, HTMLStencilElement {
     }
     var HTMLFauxGridElement: {
@@ -61,6 +69,7 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "faux-card": HTMLFauxCardElement;
         "faux-grid": HTMLFauxGridElement;
         "faux-grid-item": HTMLFauxGridItemElement;
         "faux-inner": HTMLFauxInnerElement;
@@ -69,6 +78,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface FauxCard {
+    }
     interface FauxGrid {
     }
     interface FauxGridItem {
@@ -92,6 +103,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "faux-card": FauxCard;
         "faux-grid": FauxGrid;
         "faux-grid-item": FauxGridItem;
         "faux-inner": FauxInner;
@@ -103,6 +115,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "faux-card": LocalJSX.FauxCard & JSXBase.HTMLAttributes<HTMLFauxCardElement>;
             "faux-grid": LocalJSX.FauxGrid & JSXBase.HTMLAttributes<HTMLFauxGridElement>;
             "faux-grid-item": LocalJSX.FauxGridItem & JSXBase.HTMLAttributes<HTMLFauxGridItemElement>;
             "faux-inner": LocalJSX.FauxInner & JSXBase.HTMLAttributes<HTMLFauxInnerElement>;
